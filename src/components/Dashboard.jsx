@@ -5,13 +5,12 @@ import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { LineChart, lineElementClasses } from "@mui/x-charts/LineChart";
-import Stack from '@mui/material/Stack';
-
+import Stack from "@mui/material/Stack";
 
 const chartsParams = {
   margin: { bottom: 20, left: 25, right: 5 },
   height: 300,
-  width:800
+  width: 800,
 };
 
 const Dashboard = () => {
@@ -58,14 +57,7 @@ const Dashboard = () => {
 
   let navigate = useNavigate();
 
-  const xLabels = [
-    'Page A',
-    'Page B',
-    'Page C',
-    'Page D',
-    'Page E',
-  ];
-
+  const xLabels = ["Page A", "Page B", "Page C", "Page D", "Page E"];
 
   return (
     <div className="bg-[#e3e6eb]">
@@ -137,13 +129,30 @@ const Dashboard = () => {
                   {...chartsParams}
                   series={[
                     {
-                      data: [100, 80, 60, 40, 40],
-                      label: "Example",
+                      data: [100000, 80234, 40000, 30000, 20000, 10],
+                      label: "Sales Funnel",
                       curve: "linear",
                       color,
                     },
                   ]}
-                  xAxis={[{ scaleType: 'point', data: xLabels }]}
+                  xAxis={[
+                    {
+                      scaleType: "point",
+                      data: [
+                        "Stage 1",
+                        "Stage 2",
+                        "Stage 3",
+                        "Stage 4",
+                        "Stage 5",
+                        "Stage 6",
+                      ],
+                    },
+                  ]}
+                  yAxis={[
+                    {
+                      scaleType: "log",
+                    },
+                  ]}
                 />
               </Stack>
             </div>
