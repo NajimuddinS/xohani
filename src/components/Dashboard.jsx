@@ -136,6 +136,36 @@ const Dashboard = () => {
           ))}
         </div>
       </div>
+      <br />
+      <div className="custom-dashboard rounded-md mt-5 ml-5 mr-5 gap-5 bg-white p-5 ">
+        <div className="custom-dashboard flex gap-10">
+          <div className="border border-gray-300 rounded-md p-3 flex flex-col gap-4">
+            <div className="flex justify-between">
+              <h1 className="font-bold">{data.title}</h1>
+              <div className="flex gap-10 align-center">
+                <div className="flex text-[#3A3093]">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStarHalf />
+                  4.8
+                </div>
+                <button className="bg-[#3A3093] rounded-md p-1 pl-2 pr-2 text-white">
+                  Active
+                </button>
+              </div>
+            </div>
+            <div>
+              <h1>{data.description}</h1>
+            </div>
+            <div className="flex justify-between max-w-2xl">
+              <p className="text-gray-400">{data.info}</p>
+              <p className="text-[#3A3093] font-semibold">{data.price}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
