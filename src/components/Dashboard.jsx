@@ -70,7 +70,7 @@ const Dashboard = () => {
             <div>
               <h1>{data.description}</h1>
             </div>
-            <div className="flex justify-between max-w-2xl">
+            <div className="flex justify-between">
               <p className="text-gray-400">{data.info}</p>
               <p className="text-[#3A3093] font-semibold">{data.price}</p>
             </div>
@@ -159,7 +159,7 @@ const Dashboard = () => {
             <div>
               <h1>{data.description}</h1>
             </div>
-            <div className="flex justify-between max-w-2xl">
+            <div className="flex justify-between ">
               <p className="text-gray-400">{data.info}</p>
               <p className="text-[#3A3093] font-semibold">{data.price}</p>
             </div>
