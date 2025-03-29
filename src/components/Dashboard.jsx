@@ -4,8 +4,19 @@ import graph from "../assets/graph.png";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { LineChart, lineElementClasses } from "@mui/x-charts/LineChart";
+import Stack from '@mui/material/Stack';
+
+
+const chartsParams = {
+  margin: { bottom: 20, left: 25, right: 5 },
+  height: 300,
+  width:800
+};
 
 const Dashboard = () => {
+  const [color, setColor] = React.useState("#584CB7");
+
   const [data, setData] = useState({
     title: "The Psychology of High-Performing Teams",
     description:
@@ -47,9 +58,14 @@ const Dashboard = () => {
 
   let navigate = useNavigate();
 
-  //   function handleNavigate(){
+  const xLabels = [
+    'Page A',
+    'Page B',
+    'Page C',
+    'Page D',
+    'Page E',
+  ];
 
-  //   }
 
   return (
     <div className="bg-[#e3e6eb]">
@@ -110,7 +126,26 @@ const Dashboard = () => {
               </button>
             </div>
             <div className="pb-5">
-              <img src={graph} alt="" />
+              {/* <img src={graph} alt="" /> */}
+              <Stack
+                direction="column"
+                spacing={2}
+                alignItems="center"
+                sx={{ width: "100%" }}
+              >
+                <LineChart
+                  {...chartsParams}
+                  series={[
+                    {
+                      data: [100, 80, 60, 40, 40],
+                      label: "Example",
+                      curve: "linear",
+                      color,
+                    },
+                  ]}
+                  xAxis={[{ scaleType: 'point', data: xLabels }]}
+                />
+              </Stack>
             </div>
           </div>
           <div className="flex flex-col gap-5 w-sm text-center">
