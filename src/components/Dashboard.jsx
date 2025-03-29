@@ -3,6 +3,7 @@ import thumb from "../assets/thumb.png";
 import graph from "../assets/graph.png";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [data, setData] = useState({
@@ -44,28 +45,45 @@ const Dashboard = () => {
     },
   ]);
 
+  let navigate = useNavigate();
+
+  //   function handleNavigate(){
+
+  //   }
+
   return (
     <div className="bg-[#e3e6eb]">
       <br />
       <div className="custom-dashboard font-medium">Listing</div>
       <br />
       <div className="custom-dashboard rounded-md mt-5 ml-5 mr-5 gap-5 bg-white p-5 ">
+        <button
+          onClick={() => {
+            navigate("/form");
+          }}
+          className="bg-[#584CB7] p-4 rounded-md text-white mb-10"
+        >
+          Go to Form Page
+        </button>
+
         {/* 1st Row */}
         <div className="custom-dashboard flex gap-10">
           <div className="border border-gray-300 rounded-md p-3 flex flex-col gap-4">
             <div className="flex justify-between">
               <h1 className="font-bold">{data.title}</h1>
-              <div className="flex text-[#3A3093]">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStarHalf />
-                4.8
+              <div className="flex items-center gap-4">
+                <div className="flex text-[#3A3093]">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStarHalf />
+                  4.8
+                </div>
+                <button className="bg-[#3A3093] rounded-md p-1 pl-2 pr-2 text-white">
+                  Active
+                </button>
               </div>
-              <button className="bg-[#3A3093] rounded-md p-1 pl-2 pr-2 text-white">
-                Active
-              </button>
             </div>
             <div>
               <h1>{data.description}</h1>
@@ -142,7 +160,7 @@ const Dashboard = () => {
           <div className="border border-gray-300 rounded-md p-3 flex flex-col gap-4">
             <div className="flex justify-between">
               <h1 className="font-bold">{data.title}</h1>
-              <div className="flex gap-10 align-center">
+              <div className="flex gap-10 items-center gap-4">
                 <div className="flex text-[#3A3093]">
                   <FaStar />
                   <FaStar />
