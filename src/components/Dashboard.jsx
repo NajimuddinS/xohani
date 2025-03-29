@@ -57,8 +57,6 @@ const Dashboard = () => {
 
   let navigate = useNavigate();
 
-  const xLabels = ["Page A", "Page B", "Page C", "Page D", "Page E"];
-
   return (
     <div className="bg-[#e3e6eb]">
       <br />
